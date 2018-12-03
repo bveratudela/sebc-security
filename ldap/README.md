@@ -7,6 +7,8 @@ Now you will setup LDAP authentication which is used for the following component
 <li>HUE</li>
 <li>Optional: Other components allow LDAP authentication along or in lieu of Kerberos: Impala, Hive, etc.</li>
 
+<br/>
+
 When configuring LDAP for Cloudera Manager, keep in mind the following concepts:
 
 <li>LDAP URL: Takes the form ldap[s]://<LDAP_SERVER>:<PORT> where ldaps is used for secure LDAP connections</li>
@@ -16,6 +18,8 @@ When configuring LDAP for Cloudera Manager, keep in mind the following concepts:
 <li>LDAP User Search Filter: Filter used to search for users</li>
 <li>LDAP Group Search Base: Tree within the directory to search for groups</li>
 <li>LDAP Group Search Filter: Filter used to search for groups</li>
+
+<br/>
 
 Please note that the use of ldaps is EXTREMELY IMPORTANT as otherwise users would be authenticated passing their credentials in clear text over the network! Anyone intercepting traffic would get immediate access to private credentials!
 
