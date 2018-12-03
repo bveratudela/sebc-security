@@ -2,12 +2,6 @@
 
 The following scripts are provided to help simulate the certificate generation process. However, we do not have a Certificate Authority to issue signed certificates. In its absence, we will create our own root and intermediate CAs using the following scripts (but first make sure your cluster.txt and clustervars files are edited with your cluster details):
 
--rwxr-xr-x   1 bveratudela  staff   381 Dec  2 22:19 4-GenerateCSRnKey.sh
--rwxr-xr-x   1 bveratudela  staff   338 Dec  2 22:24 5-SignCert.sh
--rwxr-xr-x   1 bveratudela  staff   377 Dec  2 22:25 6-CreateKeystore.sh
--rwxr-xr-x   1 bveratudela  staff   364 Dec  2 22:27 7-CreateTruststore.sh
--rwxr-xr-x@  1 bveratudela  staff  1785 Dec  2 22:14 README.md
-
 ```
 ./2-CreateRootCA.sh
 ./3-CreateIntermediateCA.sh
