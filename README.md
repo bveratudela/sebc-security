@@ -10,7 +10,7 @@ In this bootcamp, you should walk away with a better understanding of what it ta
 
 <br/>
 
-You will start the bootcamp on day 1 instantiating your cluster. It is expected that you know how to build yours with little to no help. Once your cluster is up and running, you will enable the OS with SSSD and LDAP (in lieu of more enterprise grade solutions such as Centrify and Active Directory). Then we will follow with securing the cluster. The agenda will be:
+You will start the bootcamp on day 1 instantiating your cluster which will require HDFS, YARN, Zookeeper, Hive, and Sentry. It is expected that you know how to build yours with little to no help. Once your cluster is up and running, you will enable the OS with SSSD and LDAP (in lieu of more enterprise grade solutions such as Centrify and Active Directory). Then we will follow with securing the cluster. The agenda will be:
 
 <li>Day 1: <a href="README.md">Intro</a> (AM) and <a href="setup">Cluster Setup</a> (PM)</li>
 <li>Day 2: <a href="kerberos">Kerberos</a> (AM) and <a href="ldap">LDAP Auth</a> (PM)</li>
