@@ -25,7 +25,7 @@ Please note that the use of ldaps is EXTREMELY IMPORTANT as otherwise users woul
 
 For this bootcamp, your job is to configure LDAP authentication ONLY for Cloudera Manager by following the documentation posted <a href="https://www.cloudera.com/documentation/enterprise/5-13-x/topics/cm_sg_external_auth.html">here</a>. If you setup OpenLDAP following the OS setup, use the following values:
 
-<li><b>LDAP URL:</b> ldap://<LDAP_SERVER></li>
+<li><b>LDAP URL:</b> ldap://LDAP_SERVER</li>
 <li><b>LDAP Bind User Distinguished Name:</b> cn=admin,dc=sebc,dc=org</li>
 <li><b>LDAP Bind User Password:</b> passw0rd</li>
 <li><b>LDAP User Search Base:</b> ou=people,dc=sebc,dc=org</li>
