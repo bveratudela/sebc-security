@@ -1,13 +1,12 @@
 # Setting up Kerberos
 
-Now you will setup MIT Kerberos. When using Active Directory, a Kerberos system will be provided. However, in lieu of an Active Directory, you will use MIT Kerberos. First start by defining your KERBEROS_SERVER on the same host as your LDAP_SERVER to make things easier to diagnose.
+Now you will setup MIT Kerberos. When using Active Directory, a Kerberos system will be provided. However, in lieu of an Active Directory, you will use MIT Kerberos. First start by defining your KERBEROS_SERVER on the same host as your LDAP_SERVER to make things easier to diagnose. Once you do that, you will need to install the Kerberos server on it as well as the Kerberos client on all hosts.
 
-Once you do that, you will need to install the Kerberos server on it as well as the Kerberos client on all hosts.
-
-Please refer to the <a href="xxx">following documentation</a> to create your Kerberos server. It is important to understand that for Kerberos to work correctly, all hostnames must be fully qualified using lowercase characters (e.g., host-01.mydomain.com vs. HOST-01.MYDOMAIN.COM). You will also need to select a Kerberos Realm which can be any string you want it to be but using uppercase characters (e.g., MYREALM.COM vs myrealm.com).
+Please refer to the <a href="https://en.wikipedia.org/wiki/Kerberos_(protocol)">following documentation</a> to learn more about Kerberos. Then refer to <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-kerberos.html">here</a> to learn how to create your own Kerberos server. It is important to understand that for Kerberos to work correctly, all hostnames must be fully qualified using lowercase characters (e.g., host-01.mydomain.com vs. HOST-01.MYDOMAIN.COM) and reverse DNS lookups must map IP addresses to the same hostname.
 
 Some Kerberos concepts worth noting:
 
+- A Kerberos Realm is the equivalent to a corporate domain. When using MIT Kerberos, your Kerberos Realm can be anything you want and should be all UPPERCASE!
 - Users are called User Principals and services are called Service Principals. 
 - User principals take the form <username>@<REALM> which is referred to as User Principal Name or UPN for short
 - Service principals on the other hand take the form <servicename>/<hostname>@<REALM> which is referred to as Service Principal Name or SPN for short
@@ -30,10 +29,12 @@ Your task now is to configure MIT Kerberos on your KERBEROS_SERVER for the corre
 <li>user3</li>
 <li>user4</li>
 
+<br/>
+
 Assign the password "passw0rd" to all them. Then proceed to install and configure the Kerberos client on all hosts and make sure you can authenticate each user from each host using the following command:
 
 ```
 kinit <username>@<KERBEROS_REALM>
 ```
 
-Upload your configuration files and results from your test in the <a href="config">config</a> directory.
+Once this is working, review <a href="https://www.cloudera.com/documentation/enterprise/5-13-x/topics/cm_sg_intro_kerb.html">here</a> for how to enable Kerberos in Cloudera. Upload your configuration files and results from your test in the <a href="config">config</a> directory.
