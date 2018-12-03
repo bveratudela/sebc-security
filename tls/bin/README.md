@@ -13,17 +13,17 @@ Once you have your root and intermediate CAs created (which is not something you
 ./4-GenerateCSRnKey.sh <FQDN>
 ```
 
-This will create a CSR and a Private Key file named <host>.csr and <host>.key, respectively. The CSR is what you provide to your CA to issue signed certificates while keeping the private keys stored in a safe place. Since we are managing the Certificate Authority, we will emulate the signing process:
+This will create a CSR and a Private Key file named hostname.csr and hostname.key, respectively (where hostname is the actual hostname of the host for which the certificate belongs). The CSR is what you provide to your CA to issue signed certificates while keeping the private keys stored in a safe place. Since we are managing the Certificate Authority, we will emulate the signing process:
 
 ```
 ./5-SignCert.sh <FQDN>
 ```
 
-You will now have a signed certificate named <host>.pem. To verify that the certificate and key match, ensure that the following both output the same MD5 checksum:
+You will now have a signed certificate named hostname.pem. To verify that the certificate and key match, ensure that the following both output the same MD5 checksum:
 
 ```
-openssl x509 -modulus -in <host>.pem -noout | openssl md5
-openssl rsa  -modulus -in <host>.key -noout | openssl md5
+openssl x509 -modulus -in hostname.pem -noout | openssl md5
+openssl rsa  -modulus -in hostname.key -noout | openssl md5
 ```
 
 This process so far has create x509 (PEM) format certificates which can be used by non-Java applications. However, Java applications require a Java KeyStore (JKS) format. In Cloudera, we have a combination of Java and non-Java based components so both are required. To create the JKS format of the certificates:
@@ -36,8 +36,8 @@ This process so far has create x509 (PEM) format certificates which can be used 
 Once the process is completed, you will require the following files:
 
 <li><b>PEM and JKS Truststore:</b> rootca.pem, intermediateca.pem and truststore.jks</li>
-<li><b>PEM and JKS Keystore:</b> <host>.pem and <host>.jks</li>
-<li><b>PEM key:</b> <host>.key (the private key for JKS is included in <host>.jks)</li>
+<li><b>PEM and JKS Keystore:</b> hostname.pem and hostname.jks</li>
+<li><b>PEM key:</b> hostname.key (the private key for JKS is included in hostname.jks)</li>
 
 <br/>
 
