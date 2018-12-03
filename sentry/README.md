@@ -7,7 +7,7 @@ id <user>
 getent group <group>
 ```
 
-Replace <user> with one of the pre-created users (e.g., admin, user1, user2, etc.) and group with one of the pre-created groups (e.g., admins, users). You should see consisten information between all hosts. If you do, you are ready to start configuring Sentry. Read over the following <a href="xxx">documentation</a> to enable Sentry.
+Replace <user> with one of the pre-created users (e.g., admin, user1, user2, etc.) and group with one of the pre-created groups (e.g., admins, users). You should see consistent information between all hosts. If you do, you are ready to start configuring Sentry. Read over the following <a href="https://www.cloudera.com/documentation/enterprise/5-13-x/topics/sg_sentry_overview.html">documentation</a> to enable Sentry.
 
 Your goal on this bootcamp is to accomplish the following:
 
