@@ -1,6 +1,6 @@
 # Certificate Scripts
 
-The following scripts are provided to help simulate the certificate generation process. However, we do not have a Certificate Authority to issue signed certificates. In its absence, we will create our own root and intermediate CAs using the following scripts (but first make sure your cluster.txt and clustervars files are edited with your cluster details):
+The following scripts are provided to help simulate the certificate generation process. However, we do not have a Certificate Authority to issue signed certificates. In its absence, we will create our own root and intermediate CAs using the following scripts (but first make sure your clustervars file is edited with your cluster details):
 
 ```
 ./2-CreateRootCA.sh
