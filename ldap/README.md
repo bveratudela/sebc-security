@@ -11,7 +11,7 @@ Now you will setup LDAP authentication which is used for the following component
 
 When configuring LDAP for Cloudera Manager, keep in mind the following concepts:
 
-<li>LDAP URL: Takes the form ldap[s]://<LDAP_SERVER>:<PORT> where ldaps is used for secure LDAP connections</li>
+<li>LDAP URL: Takes the form ldap[s]://LDAP_SERVER:PORT where ldaps is used for secure LDAP connections</li>
 <li>LDAP Bind User Distinguished Name: User allowed to search the directory for users and groups</li>
 <li>LDAP Bind Password: Password for the Bind User</li>
 <li>LDAP User Search Base: Tree within the directory to search for users</li>
