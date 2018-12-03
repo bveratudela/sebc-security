@@ -22,4 +22,6 @@ Your goal on this bootcamp is to accomplish the following:
 <li>Authenticate with user1 and connect to Hive via beeline. Perform a SELECT * on table1 and then on table2.</li>
 <li>Authenticate with user2 and connect to Hive via beeline. Perform a SELECT * on table1 and then on table2.</li>
 
+<br/>
+
 Elaborate what you noticed. Upload your <a href="config/output.txt">response</a> showing also the output from the commands.
