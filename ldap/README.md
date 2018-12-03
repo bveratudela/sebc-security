@@ -25,13 +25,15 @@ Please note that the use of ldaps is EXTREMELY IMPORTANT as otherwise users woul
 
 For this bootcamp, your job is to configure LDAP authentication ONLY for Cloudera Manager. If you setup OpenLDAP following the OS setup, use the following values:
 
-LDAP URL: ldap://<LDAP_SERVER>
-LDAP Bind User Distinguished Name: cn=admin,dc=sebc,dc=org
-LDAP Bind User Password: passw0rd
-LDAP User Search Base: ou=people,dc=sebc,dc=org
-LDAP User Search Filter: (uid={0})
-LDAP Group Search Base: ou=groups,dc=sebc,dc=org
-LDAP Group Search Fiter: (memberUid={0})
+<li><b>LDAP URL:</b> ldap://<LDAP_SERVER></li>
+<li><b>LDAP Bind User Distinguished Name:</b> cn=admin,dc=sebc,dc=org</li>
+<li><b>LDAP Bind User Password:</b> passw0rd</li>
+<li><b>LDAP User Search Base:</b> ou=people,dc=sebc,dc=org</li>
+<li><b>LDAP User Search Filter:</b> (uid={0})</li>
+<li><b>LDAP Group Search Base:</b> ou=groups,dc=sebc,dc=org</li>
+<li><b>LDAP Group Search Fiter:</b> (memberUid={0})</li>
+
+<br/>
 
 You will need to set <b>Authentication Backend Order</b> to <b>External then Database</b> (this prevents you from getting locked out if the LDAP configuration does not work) and <b>External Authentication Type</b> to <b>LDAP</b>. Also make the 'admins' group be the <b>LDAP Full Administrator Groups</b>. You will need to restart the Cloudera Manager server via the following command:
 
