@@ -1,39 +1,19 @@
-# Setting up Kerberos
+# Security Services Enablement Bootcamp (SEBC)
 
-Now you will setup MIT Kerberos. When using Active Directory, a Kerberos system will be provided. However, in lieu of an Active Directory, you will use MIT Kerberos. First start by defining your KERBEROS_SERVER on the same host as your LDAP_SERVER to make things easier to diagnose.
+In this bootcamp, you should walk away with a better understanding of what it takes to secure Cloudera clusters. More specifically, you will gain hands on experience with:
 
-Once you do that, you will need to install the Kerberos server on it as well as the Kerberos client on all hosts.
+<li>Setting up Kerberos</li>
+<li>Setting up LDAP</li>
+<li>Setting up Role-Based Access Controls (RBAC) with Sentry</li>
+<li>Setting up Transport Layer Security (TLS)</li>
+<li>Learning about Data-at-Rest Encryption</li>
 
-Please refer to the <a href="xxx">following documentation</a> to create your Kerberos server. It is important to understand that for Kerberos to work correctly, all hostnames must be fully qualified using lowercase characters (e.g., host-01.mydomain.com vs. HOST-01.MYDOMAIN.COM). You will also need to select a Kerberos Realm which can be any string you want it to be but using uppercase characters (e.g., MYREALM.COM vs myrealm.com).
+You will start the bootcamp on day 1 instantiating your cluster. It is expected that you know how to build yours with little to no help. Once your cluster is up and running, you will enable the OS with SSSD and LDAP (in lieu of more enterprise grade solutions such as Centrify and Active Directory). Then we will follow with securing the cluster. The agenda will be:
 
-Some Kerberos concepts worth noting:
+<li>Day 1: <a href="README.md">Intro</a> (AM) and <a href="setup">Cluster Setup</a> (PM)</li>
+<li>Day 2: <a href="kerberos">Kerberos</a> (AM) and <a href="ldap">LDAP Auth</a> (PM)</li>
+<li>Day 3: <a href="tls>TLS</a> (AM) and <a href="sentry">Sentry</a> (PM)</li>
+<li>Day 4: <a href="navigator">Navigator</a> (AM) and <a href="dare-crypt">Data-at-Rest Encryption</a> (PM)</li>
+<li>Day 5: <a href="challenge">Challenge</a> (AM)</li>
 
-- Users are called User Principals and services are called Service Principals. 
-- User principals take the form <username>@<REALM> which is referred to as User Principal Name or UPN for short
-- Service principals on the other hand take the form <servicename>/<hostname>@<REALM> which is referred to as Service Principal Name or SPN for short
-- User principals tend to be interactive users and authenticate with Kerberos using a password
-- Service principals tend not to be interactive and therefore can't be prompted for passwords so instead often use what are called 'keytabs'
-- Keytabs are files which contain an encrypted 'shared secret' stored in the Kerberos server AND the host where the service runs
-- Keytab files must be fully protected with proper permissions (e.g., owned by the service user with restrictive permissions like 'chmod 600')
-
-When using Active Directory, user and service principals are created in the context of the corresponding Active Directory user or service. Therefore, users can use their AD credentials (username and password) to authenticate with a cluster (provided the cluster is Kerberized against the same corporate domain or REALM). However, when using OpenLDAP and MIT Kerberos, these act as two distinct solutions each storing user and password information in their own datastores.
-
-To enable Kerberos authentication for a cluster, a designated Kerberos admin user must be created (whether it is AD or MIT Kerberos). When Kerberizing a cluster against AD, an organizational unit must be supplied as well by the AD admin where the Kerberos admin user is allowed to create and delete SPNs. Please note that when using AD, Cloudera Manager will use the admin user to create service names along with corresponding SPNs for each role run on each host, but the <servicename> component will be randomized for additional security (a prefix can be configured for better identification or search of the resources created). When using MIT Kerberos, the SPNs will be created using their expected names. Keytabs for each role will be automatically generated and transfered over the network to the corresponding host.
-
-NOTE: Due to the fact that keytabs contain sensitive information and are transferred over the network, the safest way to configure Kerberos is to enable <a href="../tls">Transport Layer Security (TLS)</a> first before enabling Kerberos. This ensures that all keytabs generated are transferred over encrypted. For this camp, we will not be applying this recommendation.
-
-Your task now is to configure MIT Kerberos on your KERBEROS_SERVER for the corresponding KERBEROS_REALM, configure a Kerberos administrator which can be used by Cloudera Manager to create SPNs, and add the following UPNs:
-
-<li>admin</li>
-<li>user1</li>
-<li>user2</li>
-<li>user3</li>
-<li>user4</li>
-
-Assign the password "passw0rd" to all them. Then proceed to install and configure the Kerberos client on all hosts and make sure you can authenticate each user from each host using the following command:
-
-```
-kinit <username>@<KERBEROS_REALM>
-```
-
-Upload your configuration files and results from your test in the <a href="config">config</a> directory.
+At the end of the bootcamp, you will be requested to submit a feedback survey which can be found <a href="survey">here</a>
