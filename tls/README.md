@@ -7,6 +7,8 @@ Now you will setup Transport Layer Security (TLS). TLS ensures that all network 
 <li>Extended Key Usage attributes set for both 'server' and 'client' authentication</li>
 <li>Subject Alternate Name set to any aliases used to identify the host (e.g., load balancer DNS)</li>
 
+<br/>
+
 Read over the <a href="https://www.cloudera.com/documentation/enterprise/5-13-x/topics/how_to_configure_cm_tls.html">following documentation</a> to learn how to enable TLS for Cloudera Manager.
 
 Your goal on this bootcamp is to enable TLS for Cloudera Manager as well as Level 1, Level 2, and Level 3 encryption for Cloudera Manager and its agents. You have been provided with scripts <a href="bin">here</a> to help you simulate the certificate process. The scripts will produce signed certificates from your own Certificate Authority (CA). The CA will consist of a root CA with a self-signed certificate and an intermediate CA with a certificate signed by the root CA. Your host certificates will be signed by the intermediate CA.

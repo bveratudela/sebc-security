@@ -92,8 +92,6 @@ basicConstraints = critical, CA:true, pathlen:0
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 EOF
 
-exit -1
-
 # Generate RootCA Key and Cert
 NAME=rootca
 
