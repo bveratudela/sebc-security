@@ -44,8 +44,8 @@ Once the process is completed, you will require the following files:
 You may inspect the contents of each certificate via the following command:
 
 ```
-PEM: openssl x509 -in <host>.pem -text -noout
-JKS: keytool -keystore <host>.jks -storepass <password> -list -v
+PEM: openssl x509 -in hostname.pem -text -noout
+JKS: keytool -keystore hostname.jks -storepass password -list -v
 ```
 
 Please submit the output from this command on at least one certificate and publish it <a href="output.txt">here</a>
