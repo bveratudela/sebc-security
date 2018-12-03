@@ -41,4 +41,4 @@ You will need to set <b>Authentication Backend Order</b> to <b>External then Dat
 service cloudera-scm-server restart
 ```
 
-Test your configuration by logging into Cloudera Manager using the admin:passw0rd credentials. Take a screenshot and show that you are logged into Cloudera Manager as an admin user (member of the Full Administrator Group).
+Test your configuration by logging into Cloudera Manager using the admin:passw0rd as well as userX:passw0rd credentials. Take a screenshot and show that you are logged into Cloudera Manager as an admin user (member of the Full Administrator Group) and then also as a regular user without administrative capabilities.
