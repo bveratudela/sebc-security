@@ -23,14 +23,14 @@ When configuring LDAP for Cloudera Manager, keep in mind the following concepts:
 
 Please note that the use of ldaps is EXTREMELY IMPORTANT as otherwise users would be authenticated passing their credentials in clear text over the network! Anyone intercepting traffic would get immediate access to private credentials!
 
-For this bootcamp, your job is to configure LDAP authentication ONLY for Cloudera Manager by following the documentation posted <a href="https://www.cloudera.com/documentation/enterprise/5-13-x/topics/cm_sg_external_auth.html">here</a>. If you setup OpenLDAP following the OS setup, use the following values:
+For this bootcamp, your job is to configure LDAP authentication ONLY for Cloudera Manager by following the documentation posted <a href="https://www.cloudera.com/documentation/enterprise/5-13-x/topics/cm_sg_external_auth.html">here</a>. Inspect your <a href="../setup/ldap">LDAP</a> configuration to fill in the values:
 
 <li><b>LDAP URL:</b> ldap://LDAP_SERVER</li>
-<li><b>LDAP Bind User Distinguished Name:</b> cn=admin,dc=sebc,dc=org</li>
+<li><b>LDAP Bind User Distinguished Name:</b> (this is the LDAP admin user in Distinguished Name form cn=xxx,dc=xxx,dc=xxx)</li>
 <li><b>LDAP Bind User Password:</b> passw0rd</li>
-<li><b>LDAP User Search Base:</b> ou=people,dc=sebc,dc=org</li>
+<li><b>LDAP User Search Base:</b> (this is the Org Unit holding users following Distinguished Name form ou=xxx,dc=xxx,dc=xxx)</li>
 <li><b>LDAP User Search Filter:</b> (uid={0})</li>
-<li><b>LDAP Group Search Base:</b> ou=groups,dc=sebc,dc=org</li>
+<li><b>LDAP Group Search Base:</b> (this is the Org Unit holding groups following Distinguished Name form ou=xxx,dc=xxx,dc=xxx)</li>
 <li><b>LDAP Group Search Fiter:</b> (memberUid={0})</li>
 
 <br/>
