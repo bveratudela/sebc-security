@@ -14,7 +14,7 @@ You will start the bootcamp on day 1 instantiating your cluster which will requi
 
 <li>Day 1: <a href="README.md">Intro</a> (AM) and <a href="setup">Cluster Setup</a> (PM)</li>
 <li>Day 2: <a href="kerberos">Kerberos</a> (AM) and <a href="ldap">LDAP Auth</a> (PM)</li>
-<li>Day 3: <a href="tls>TLS</a> (AM) and <a href="sentry">Sentry</a> (PM)</li>
+<li>Day 3: <a href="tls">TLS</a> (AM) and <a href="sentry">Sentry</a> (PM)</li>
 <li>Day 4: <a href="navigator">Navigator</a> (AM) and <a href="dare-crypt">Data-at-Rest Encryption</a> (PM)</li>
 <li>Day 5: <a href="challenge">Challenge</a> (AM)</li>
 
